@@ -10,6 +10,7 @@ struct TransactionsView: View {
     
     @State private var searchText = ""
     @State private var selectedFilter = 0
+    @State private var showingImport = false
     
     let filters = ["All", "Expenses", "Income"]
     
@@ -49,10 +50,18 @@ struct TransactionsView: View {
                 // Transactions List
                 GlassCard {
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("May 2026")
-                            .font(.headlineMD)
-                            .foregroundColor(.tombudgetOnSurface)
-                            .padding(.bottom, 16)
+                        HStack {
+                            Text("May 2026")
+                                .font(.headlineMD)
+                                .foregroundColor(.tombudgetOnSurface)
+                                .padding(.bottom, 16)
+                            Spacer()
+                            Button(action: { showingImport = true }) {
+                                Image(systemName: "square.and.arrow.down")
+                                    .font(.system(size: 18))
+                                    .foregroundColor(.tombudgetPrimary)
+                            }
+                        }
                         
                         ForEach(sampleTransactions) { transaction in
                             TransactionRow(transaction: transaction)
@@ -70,6 +79,9 @@ struct TransactionsView: View {
         }
         .background(Color.tombudgetBackground.ignoresSafeArea())
         .navigationBarHidden(true)
+        .sheet(isPresented: $showingImport) {
+            CSVImportView()
+        }
     }
     
     var sampleTransactions: [Transaction] {
