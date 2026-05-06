@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TomBudget - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#00210c",
+                        "tertiary-container": "#c78202",
+                        "on-primary-container": "#070494",
+                        "outline-variant": "#464653",
+                        "on-primary-fixed-variant": "#3035af",
+                        "surface": "#13131a",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c6c5d6",
+                        "secondary-fixed": "#6dfe9c",
+                        "surface-variant": "#34343c",
+                        "on-secondary": "#003919",
+                        "inverse-on-surface": "#303038",
+                        "surface-tint": "#bfc2ff",
+                        "background": "#13131a",
+                        "secondary-container": "#00b55d",
+                        "on-tertiary": "#462b00",
+                        "on-primary-fixed": "#02006d",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "surface-dim": "#13131a",
+                        "on-tertiary-fixed": "#2a1800",
+                        "surface-container-low": "#1b1b22",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "error-container": "#93000a",
+                        "on-primary": "#131599",
+                        "surface-container-lowest": "#0d0e15",
+                        "on-secondary-fixed-variant": "#005227",
+                        "primary-container": "#7d84fe",
+                        "surface-bright": "#393841",
+                        "on-background": "#e4e1ec",
+                        "outline": "#908f9f",
+                        "surface-container": "#1f1f26",
+                        "on-surface": "#e4e1ec",
+                        "tertiary-fixed": "#ffddb5",
+                        "primary": "#bfc2ff",
+                        "inverse-surface": "#e4e1ec",
+                        "tertiary-fixed-dim": "#ffb956",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-highest": "#34343c",
+                        "surface-container-high": "#292931",
+                        "on-secondary-container": "#003e1c",
+                        "secondary-fixed-dim": "#4de082",
+                        "secondary": "#4de082",
+                        "tertiary": "#ffb956",
+                        "primary-fixed": "#e0e0ff",
+                        "on-tertiary-container": "#3d2500",
+                        "inverse-primary": "#4950c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xs": "8px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "margin": "32px",
+                        "2xl": "48px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "label-xs": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h1": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-xs": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #13131a;
+            color: #e4e1ec;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 31, 38, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(144, 143, 159, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-low/80 backdrop-blur-xl shadow-sm dark:shadow-none flex items-center justify-between px-margin-main h-16 w-full">
+<div class="flex items-center gap-4 px-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer transition-all duration-300 ease-in-out active:scale-95" data-icon="arrow_back">arrow_back</span>
+<h1 class="text-headline-lg font-headline-lg text-primary dark:text-primary-fixed-dim font-bold tracking-tight">TomBudget</h1>
+</div>
+<div class="flex items-center gap-2 px-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed cursor-pointer transition-all duration-300 ease-in-out active:scale-95 p-2 rounded-full hover:bg-primary-container/20" data-icon="more_vert">more_vert</span>
+</div>
+</header>
+<main class="pt-24 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Hero Section: Rhythm of the Day -->
+<section class="mb-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Pace of the Day Widget -->
+<div class="md:col-span-8 glass-card rounded-xl p-lg flex flex-col justify-between relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-md">
+<div>
+<h2 class="text-h2 font-h2 text-on-surface mb-xs">Rythme du jour</h2>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Statut en temps réel de vos dépenses</p>
+</div>
+<div class="bg-secondary-container/20 text-secondary px-3 py-1 rounded-full text-label-xs font-label-xs">
+                                SUR LA BONNE VOIE
+                            </div>
+</div>
+<div class="grid grid-cols-2 gap-lg mt-lg">
+<div class="space-y-1">
+<p class="text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider">Allocation Journalière</p>
+<p class="text-h3 font-h3 text-primary">45,00 €</p>
+</div>
+<div class="space-y-1">
+<p class="text-label-xs font-label-xs text-on-surface-variant uppercase tracking-wider">Dépensé aujourd'hui</p>
+<p class="text-h3 font-h3 text-on-surface">12,40 €</p>
+</div>
+</div>
+<div class="mt-xl">
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[28%] rounded-full shadow-[0_0_12px_rgba(77,224,130,0.4)]"></div>
+</div>
+<div class="flex justify-between mt-xs">
+<p class="text-label-xs font-label-xs text-on-surface-variant">0%</p>
+<p class="text-label-xs font-label-xs text-on-surface-variant">Seuil critique: 35€</p>
+</div>
+</div>
+</div>
+<div class="absolute -right-16 -bottom-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+<!-- Budget Restant Ring -->
+<div class="md:col-span-4 glass-card rounded-xl p-lg flex flex-col items-center justify-center text-center">
+<h3 class="text-label-sm font-label-sm text-on-surface-variant mb-md">Budget Restant</h3>
+<div class="relative w-40 h-40">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary" cx="80" cy="80" fill="transparent" r="70" stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="110" stroke-width="8" style="stroke-linecap: round;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-h3 font-h3 text-on-surface">75%</span>
+<span class="text-label-xs font-label-xs text-on-surface-variant">842,00 €</span>
+</div>
+</div>
+<p class="mt-md text-label-xs font-label-xs text-on-surface-variant">Il vous reste 12 jours</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Monthly Estimation Card -->
+<div class="glass-card rounded-xl p-lg border-l-4 border-tertiary">
+<div class="flex items-center gap-3 mb-md">
+<span class="material-symbols-outlined text-tertiary" data-icon="trending_up">trending_up</span>
+<h3 class="text-label-sm font-label-sm text-on-surface-variant">Estimation fin de mois</h3>
+</div>
+<p class="text-h3 font-h3 text-on-surface mb-xs">1 150,00 €</p>
+<p class="text-label-xs font-label-xs text-tertiary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+                    +5% que le mois dernier
+                </p>
+<div class="mt-lg pt-md border-t border-outline-variant/10">
+<p class="text-label-xs font-label-xs text-on-surface-variant">Basé sur vos habitudes actuelles</p>
+</div>
+</div>
+<!-- Spending Habits Visual -->
+<div class="glass-card rounded-xl overflow-hidden relative min-h-[200px] flex items-end">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40" data-alt="A sophisticated dark-themed data visualization showing abstract financial growth trends with soft neon blue and green highlights. The aesthetic is clean, professional, and high-end, utilizing deep navy backgrounds and crisp, minimalist lines to represent complex budget analytics in a serene, nocturnal fiscal environment." src="https://lh3.googleusercontent.com/aida/ADBb0ugBTyqbA6c3Ni6isdbScm52R3py1-rphomrapNtBhJPjtLgYOc6wKMgW7VdHODRs2zunDCaMiyrXkrd7p4FnDEOCl8q_gPxIMuLvIDcDS5bMSGpGX1MOI7il8Wr4gfuXXLpA9HsB53uayfTIoiiIHej795amlQggv0GbzjTWTMEWxg1owNueLh8wRygf7Nb4KTWrJu5Vq2hG9i-tVNMYIKOURk4GeEwQAOakx3TL9ezIG4jJLnqehHx4zCCi9reGEgGGHMZp6u7iQ"/>
+<div class="relative z-10 p-md bg-gradient-to-t from-surface-container-lowest to-transparent w-full">
+<h3 class="text-label-sm font-label-sm text-on-surface">Analyse des habitudes</h3>
+<p class="text-label-xs font-label-xs text-on-surface-variant">Optimisation suggérée : -12%</p>
+</div>
+</div>
+<!-- Quick Action / Alerts -->
+<div class="glass-card rounded-xl p-lg flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-on-surface">Abonnements</span>
+<span class="text-label-xs font-label-xs text-error">Action requise</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="subscriptions">subscriptions</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface">Netflix Premium</p>
+<p class="text-label-xs font-label-xs text-on-surface-variant">Prévu demain : 17,99 €</p>
+</div>
+</div>
+</div>
+<button class="mt-lg w-full bg-primary text-on-primary py-2 rounded-lg text-label-sm font-label-sm transition-all duration-300 active:scale-95">
+                    Gérer les alertes
+                </button>
+</div>
+</section>
+<!-- Recent Activity -->
+<section class="mt-lg">
+<div class="flex items-center justify-between mb-md">
+<h2 class="text-h3 font-h3 text-on-surface">Activités récentes</h2>
+<button class="text-primary text-label-sm font-label-sm hover:underline">Voir tout</button>
+</div>
+<div class="glass-card rounded-xl divide-y divide-outline-variant/10">
+<div class="p-md flex items-center justify-between hover:bg-surface-variant/20 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="shopping_cart">shopping_cart</span>
+</div>
+<div>
+<p class="text-body-md font-body-md text-on-surface">Monoprix Gastronomie</p>
+<p class="text-label-xs font-label-xs text-on-surface-variant">Aujourd'hui, 14:20</p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface">- 42,50 €</p>
+</div>
+<div class="p-md flex items-center justify-between hover:bg-surface-variant/20 transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="directions_car">directions_car</span>
+</div>
+<div>
+<p class="text-body-md font-body-md text-on-surface">TotalEnergies</p>
+<p class="text-label-xs font-label-xs text-on-surface-variant">Hier, 18:45</p>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface">- 65,00 €</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-xl z-50 bg-surface/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-white/20 dark:border-outline-variant/10 shadow-[0_-4px_12px_rgba(71,77,197,0.08)] flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary-fixed-dim font-bold transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-sm font-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-outline opacity-60 hover:text-primary dark:hover:text-primary-fixed transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="text-label-sm font-label-sm">Analytics</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-outline opacity-60 hover:text-primary dark:hover:text-primary-fixed transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm">Budget</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-outline opacity-60 hover:text-primary dark:hover:text-primary-fixed transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm">Settings</span>
+</a>
+</nav>
+<!-- Contextual FAB - Dashboard active -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary-container rounded-2xl shadow-xl flex items-center justify-center text-on-primary-container transition-all duration-300 ease-in-out active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

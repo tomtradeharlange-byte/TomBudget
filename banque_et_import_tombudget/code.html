@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(252, 248, 251, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#4950c7",
+                        "surface-bright": "#fcf8fb",
+                        "inverse-surface": "#303032",
+                        "secondary-container": "#a1f0c9",
+                        "on-tertiary-fixed-variant": "#6d372f",
+                        "surface-variant": "#e4e2e4",
+                        "tertiary-container": "#a3645a",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#874c43",
+                        "outline": "#767685",
+                        "surface-container-high": "#eae7ea",
+                        "secondary-fixed": "#a4f3cb",
+                        "on-secondary-container": "#1d7050",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#370d08",
+                        "on-surface-variant": "#464653",
+                        "on-surface": "#1b1b1d",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-container": "#f0edef",
+                        "surface": "#fcf8fb",
+                        "on-primary-fixed": "#02006d",
+                        "inverse-primary": "#bfc2ff",
+                        "surface-dim": "#dcd9dc",
+                        "primary-fixed": "#e0e0ff",
+                        "primary-container": "#6067df",
+                        "on-secondary-fixed-variant": "#005137",
+                        "on-secondary-fixed": "#002114",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "primary": "#474dc5",
+                        "outline-variant": "#c6c5d6",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "on-background": "#1b1b1d",
+                        "secondary": "#166b4c",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf8fb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-fixed-dim": "#88d6b0",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3035af"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter-grid": "12px",
+                        "card-padding": "20px",
+                        "stack-lg": "24px",
+                        "margin-main": "20px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "display-amount": ["Manrope"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-white/20 shadow-sm shadow-primary/10 flex justify-between items-center px-margin-main h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up of a modern workspace with soft sunlight, featuring a minimalist aesthetic and blurred background. The palette is dominated by soft whites and lavenders, reflecting an optimistic and precise corporate atmosphere. The lighting is bright and airy, creating a high-end digital feeling for a finance application profile." src="https://lh3.googleusercontent.com/aida/ADBb0uh9wjmchpO1AlJ_f4nPgTD0blmhiMriHoOY3_VajLkHJs5bG4QGd-Uejj5QNVTCm2JOADXx6C6CFDSJcOmCmLRBxP2Ru2f09sgshF5M74dEE6raRrN9rRHL1evr1WcWe2y3rB9l6pAEfhU-nZ6i-CD1XXcW9DFMXpPMU-e2Myng1uuPRXsYdg5qGl4d1Ax0hPupWCPv3Tf27V_fF3GwB_hUFrjCl1qLsk8afeq9NVNhlrHNGyiPo3jm1wfcPPmESiuqWBxl83_4yl0"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">TomBudget</h1>
+</div>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform" data-icon="notifications">notifications</button>
+</header>
+<main class="mt-20 px-margin-main max-w-lg mx-auto space-y-stack-lg">
+<!-- Page Title -->
+<div class="py-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Comptes &amp; Import</h2>
+<p class="font-body-sm text-on-surface-variant">Gérez vos sources financières et importez vos transactions.</p>
+</div>
+<!-- Section: Ajouter un compte bancaire -->
+<section class="glass-card rounded-xl p-card-padding shadow-sm">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+<h3 class="font-headline-md text-headline-md">Ajouter un compte bancaire</h3>
+</div>
+<form class="space-y-stack-md">
+<div class="space-y-1">
+<label class="font-label-sm text-on-surface-variant px-1">Nom de la banque</label>
+<input class="w-full h-12 px-4 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary/20 transition-all font-body-sm" placeholder="Ex: BNP Paribas, Revolut..." type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-on-surface-variant px-1">Type de compte</label>
+<select class="w-full h-12 px-4 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary/20 transition-all font-body-sm appearance-none">
+<option>Compte Courant</option>
+<option>Épargne</option>
+<option>Carte de Crédit</option>
+<option>Investissement</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-on-surface-variant px-1">Solde initial</label>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg bg-surface-container border-none focus:ring-2 focus:ring-primary/20 transition-all font-body-sm pr-12" placeholder="0.00" type="number"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 font-headline-md text-on-surface-variant">€</span>
+</div>
+</div>
+<button class="w-full h-12 mt-stack-md bg-primary text-on-primary rounded-xl font-headline-md active:scale-[0.98] transition-transform shadow-md shadow-primary/20" type="submit">
+                    Confirmer la création
+                </button>
+</form>
+</section>
+<!-- Visual Anchor: Glassmorphic Banner -->
+<div class="relative w-full h-32 rounded-xl overflow-hidden shadow-lg group">
+<img class="w-full h-full object-cover" data-alt="A minimalist and high-end digital abstract background featuring flowing waves of soft lavender and mint green colors. The lighting is diffused and luminous, creating a sense of depth and transparency that aligns with glassmorphic design principles. The atmosphere is serene, professional, and optimistic, perfect for a high-end financial tracking tool." src="https://lh3.googleusercontent.com/aida/ADBb0ugcazNLpbrt1_pNN71ATJ9I6xyyBCRN7a4DRfnJ3nB8ckKCStw4BW1y5ze5lNHAfY8sWWRuJ3Ey6fupyNuYfXJeJZFaKUPZIahOKwwPpQt6Xt9_9WPiyH1x4B5k7IwG4XB4cL2wXngUAsWKxQd_7s2gugKtjoGDKpIEPgqxpFRzIu2zM12cGsc--VvloOAeN3K2GOoQzCtdLMgi5XTFsazMJ06PNeAGyPxBSXPBmMlHTcixERaWr9JeaOJlq1f_nQJoycYZ7TY9xMU"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-sm flex flex-col justify-center px-card-padding">
+<span class="font-label-caps text-on-primary-container text-white opacity-90 uppercase">Conseil TomBudget</span>
+<p class="text-white font-headline-md leading-tight">Gardez vos comptes à jour pour une meilleure précision.</p>
+</div>
+</div>
+<!-- Section: Importer des données (CSV) -->
+<section class="glass-card rounded-xl p-card-padding shadow-sm">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-secondary" data-icon="csv_file">csv</span>
+<h3 class="font-headline-md text-headline-md">Importer des données (CSV)</h3>
+</div>
+<div class="bg-secondary-container/10 border-2 border-dashed border-secondary/30 rounded-xl p-stack-lg text-center space-y-stack-md">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="upload_file">upload_file</span>
+</div>
+<div>
+<p class="font-headline-md text-on-surface">Faites glisser votre fichier ici</p>
+<p class="font-body-sm text-on-surface-variant mt-1">Format supporté : .CSV (max 5Mo)</p>
+</div>
+<label class="inline-flex items-center justify-center px-6 h-11 bg-secondary text-on-secondary rounded-full font-label-sm cursor-pointer hover:opacity-90 transition-opacity active:scale-95 transition-transform">
+<span>Choisir un fichier</span>
+<input accept=".csv" class="hidden" type="file"/>
+</label>
+</div>
+<!-- Instructions -->
+<div class="mt-stack-lg space-y-stack-sm">
+<p class="font-label-caps text-on-surface-variant px-1 uppercase">Instructions</p>
+<ul class="space-y-3">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-sm">Vérifiez que la première ligne contient les en-têtes (Date, Montant, Libellé).</p>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-sm">Utilisez le point (.) comme séparateur de décimales.</p>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<p class="font-body-sm">Assurez-vous que les dates respectent le format JJ/MM/AAAA.</p>
+</li>
+</ul>
+</div>
+</section>
+<!-- Illustration Component -->
+<div class="rounded-xl overflow-hidden">
+<img class="w-full aspect-[2.52] object-cover" data-alt="A clean and modern horizontal composition showing a stylized set of financial graphs and soft glass-like layers. The palette is dominated by lavender blue and soft mint accents over a pristine off-white background. The scene is bright and professional, evoking clarity, transparency, and organized financial health in a corporate minimalist style." src="https://lh3.googleusercontent.com/aida/ADBb0uhr7wMdfb8m4wfP_NhoI1pd7FRIAtgfhcpi8OoMWSkLzi5T__gUXKQf9LanWEoTWIPWEIIOhapH24muGOsQu7reHDXfM1XgkbxY67ZS471NsWEs2A6JEUQUQGAYZUucXZJmEk0U2h6YXcpdyCusZ7Kzuh3KBrr_V-eifwPd4imaHOfIozloDJU4xlYovnCoN_fC95CRQgyKYjwdO9mrN6OLvMqF9RjR44m1fov7siexBPoCXPgfwLQ8ANZogKN1aILL8oO9oQoAgw"/>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-xl border-t border-white/20 shadow-[0_-4px_12px_rgba(71,77,197,0.08)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">Transactions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+<span class="font-label-sm text-label-sm">Goals</span>
+</a>
+</nav>
+</body></html>

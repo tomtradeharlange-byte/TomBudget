@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#34343c",
+                    "on-secondary-fixed": "#00210c",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#13131a",
+                    "on-secondary-container": "#003e1c",
+                    "surface-tint": "#bfc2ff",
+                    "outline-variant": "#464653",
+                    "primary-fixed": "#e0e0ff",
+                    "on-primary": "#131599",
+                    "secondary-fixed": "#6dfe9c",
+                    "surface-container": "#1f1f26",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#ffddb5",
+                    "surface-container-lowest": "#0d0e15",
+                    "on-secondary-fixed-variant": "#005227",
+                    "on-secondary": "#003919",
+                    "inverse-on-surface": "#303038",
+                    "error": "#ffb4ab",
+                    "primary": "#bfc2ff",
+                    "on-primary-container": "#070494",
+                    "secondary": "#4de082",
+                    "surface-bright": "#393841",
+                    "primary-container": "#7d84fe",
+                    "secondary-container": "#00b55d",
+                    "outline": "#908f9f",
+                    "on-background": "#e4e1ec",
+                    "on-tertiary": "#462b00",
+                    "on-surface-variant": "#c6c5d6",
+                    "on-tertiary-container": "#3d2500",
+                    "on-tertiary-fixed": "#2a1800",
+                    "inverse-primary": "#4950c7",
+                    "secondary-fixed-dim": "#4de082",
+                    "inverse-surface": "#e4e1ec",
+                    "primary-fixed-dim": "#bfc2ff",
+                    "background": "#13131a",
+                    "on-surface": "#e4e1ec",
+                    "on-error": "#690005",
+                    "tertiary": "#ffb956",
+                    "tertiary-fixed-dim": "#ffb956",
+                    "on-primary-fixed-variant": "#3035af",
+                    "tertiary-container": "#c78202",
+                    "surface-dim": "#13131a",
+                    "on-primary-fixed": "#02006d",
+                    "surface-container-high": "#292931",
+                    "surface-container-low": "#1b1b22",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "surface-container-highest": "#34343c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "margin": "32px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "h3": ["Manrope"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "h2": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "h1": ["Manrope"],
+                    "label-xs": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "32px", "letterSpacing": "0", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "h2": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "h1": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-xs": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-elevation-1 { background-color: #1E293B; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .tonal-elevation-2 { background-color: #334155; }
+        .neon-glow-red { box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-low/80 backdrop-blur-xl shadow-sm dark:shadow-none flex items-center justify-between px-margin h-16">
+<button class="transition-all duration-300 ease-in-out active:scale-95 text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="text-label-sm font-label-sm uppercase tracking-widest text-on-surface-variant">Seuil Quotidien Atteint</h1>
+<button class="transition-all duration-300 ease-in-out active:scale-95 text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<main class="pt-20 px-margin space-y-lg">
+<!-- Visual Display: Budget vs Actual -->
+<section class="tonal-elevation-1 p-lg rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[80px]" data-icon="warning">warning</span>
+</div>
+<div class="flex flex-col gap-sm relative z-10">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Dépenses du jour</p>
+<div class="flex items-baseline gap-xs">
+<span class="text-h1 font-h1 text-error">142,50€</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ 85,00€</span>
+</div>
+<div class="mt-md space-y-xs">
+<div class="flex justify-between text-label-xs font-label-xs">
+<span class="text-secondary uppercase">Allocation</span>
+<span class="text-error uppercase">Dépassement: +57,50€</span>
+</div>
+<div class="h-4 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 60%;"></div>
+<div class="h-full bg-error" style="width: 40%; margin-left: 60%; margin-top: -16px;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Triggering Transaction -->
+<section class="space-y-sm">
+<h2 class="text-label-sm font-label-sm text-on-surface-variant px-1 uppercase tracking-wider">Transaction Critique</h2>
+<div class="tonal-elevation-1 border-error/30 p-md rounded-xl flex items-center justify-between neon-glow-red">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<p class="font-h3 text-body-md text-on-surface">Le Bistrot Gourmet</p>
+<p class="text-label-xs font-label-xs text-on-surface-variant">Aujourd'hui, 13:42</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-h3 text-body-md text-error font-bold">-62,00€</p>
+<span class="text-[10px] bg-error/10 text-error px-2 py-0.5 rounded-full border border-error/20">Alerte Déclenchée</span>
+</div>
+</div>
+</section>
+<!-- Image Content Canvas -->
+<div class="rounded-xl overflow-hidden aspect-[2.52] w-full">
+<img class="w-full h-full object-cover opacity-80" data-alt="A sophisticated financial dashboard visualization showing complex line charts and glowing data nodes against a deep midnight blue background. The aesthetic is clean and corporate modern, featuring sharp UI elements and vibrant neon green accents that illuminate the dark data landscape. The lighting is low-key, emphasizing depth and precision in a high-end fintech context." src="https://lh3.googleusercontent.com/aida/ADBb0uhr7wMdfb8m4wfP_NhoI1pd7FRIAtgfhcpi8OoMWSkLzi5T__gUXKQf9LanWEoTWIPWEIIOhapH24muGOsQu7reHDXfM1XgkbxY67ZS471NsWEs2A6JEUQUQGAYZUucXZJmEk0U2h6YXcpdyCusZ7Kzuh3KBrr_V-eifwPd4imaHOfIozloDJU4xlYovnCoN_fC95CRQgyKYjwdO9mrN6OLvMqF9RjR44m1fov7siexBPoCXPgfwLQ8ANZogKN1aILL8oO9oQoAgw"/>
+</div>
+<!-- Weekly Forecast & Suggestions -->
+<section class="space-y-md">
+<h2 class="text-label-sm font-label-sm text-on-surface-variant px-1 uppercase tracking-wider">Recommandations Hebdomadaires</h2>
+<div class="grid grid-cols-1 gap-md">
+<div class="tonal-elevation-1 p-md rounded-xl flex items-start gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="eco">eco</span>
+<div>
+<p class="text-label-sm font-label-sm text-primary mb-1">Ajustement Automatique</p>
+<p class="text-body-md text-on-surface-variant text-[14px]">Pour compenser, réduisez vos dépenses de 11,50€ par jour pour le reste de la semaine.</p>
+</div>
+</div>
+<div class="tonal-elevation-1 p-md rounded-xl flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="savings">savings</span>
+<div>
+<p class="text-label-sm font-label-sm text-secondary mb-1">Optimisation "Courses"</p>
+<p class="text-body-md text-on-surface-variant text-[14px]">Vous avez 15€ de marge sur votre budget alimentation. Utilisez-le pour équilibrer.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-sm pt-md">
+<button class="w-full bg-primary-container text-on-primary-container font-h3 text-body-md py-4 rounded-xl shadow-lg transition-all duration-300 ease-in-out active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+                Gérer les alertes
+            </button>
+<button class="w-full border border-outline-variant text-on-surface font-h3 text-body-md py-4 rounded-xl transition-all duration-300 ease-in-out active:scale-95 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Retour au Dashboard
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-surface/90 dark:bg-surface-container-lowest/90 backdrop-blur-2xl border-t border-white/20 dark:border-outline-variant/10 rounded-t-xl z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-outline opacity-60 hover:text-primary transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-sm font-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-outline opacity-60 hover:text-primary transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="text-label-sm font-label-sm">Analytics</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-outline opacity-60 hover:text-primary transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm">Budget</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary-fixed-dim font-bold transition-transform duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm">Settings</span>
+</a>
+</nav>
+</body></html>

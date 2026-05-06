@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(252, 248, 251, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .bg-mesh {
+            background-color: #fcf8fb;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(71, 77, 197, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(161, 240, 201, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(135, 76, 67, 0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(71, 77, 197, 0.08) 0px, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#4950c7",
+                        "surface-bright": "#fcf8fb",
+                        "inverse-surface": "#303032",
+                        "secondary-container": "#a1f0c9",
+                        "on-tertiary-fixed-variant": "#6d372f",
+                        "surface-variant": "#e4e2e4",
+                        "tertiary-container": "#a3645a",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#874c43",
+                        "outline": "#767685",
+                        "surface-container-high": "#eae7ea",
+                        "secondary-fixed": "#a4f3cb",
+                        "on-secondary-container": "#1d7050",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#370d08",
+                        "on-surface-variant": "#464653",
+                        "on-surface": "#1b1b1d",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-container": "#f0edef",
+                        "surface": "#fcf8fb",
+                        "on-primary-fixed": "#02006d",
+                        "inverse-primary": "#bfc2ff",
+                        "surface-dim": "#dcd9dc",
+                        "primary-fixed": "#e0e0ff",
+                        "primary-container": "#6067df",
+                        "on-secondary-fixed-variant": "#005137",
+                        "on-secondary-fixed": "#002114",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "primary": "#474dc5",
+                        "outline-variant": "#c6c5d6",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "on-background": "#1b1b1d",
+                        "secondary": "#166b4c",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf8fb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-fixed-dim": "#88d6b0",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3035af"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter-grid": "12px",
+                        "card-padding": "20px",
+                        "stack-lg": "24px",
+                        "margin-main": "20px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "display-amount": ["Manrope"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-mesh min-h-screen font-body-lg text-on-surface">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-main h-16 w-full bg-surface/80 backdrop-blur-md border-b border-white/20 shadow-sm shadow-primary/10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up professional portrait of a confident young woman with a warm smile, set against a soft, out-of-focus modern office background. The lighting is bright and airy, reflecting a high-end corporate lifestyle. The overall aesthetic is clean and minimal, using a light mode color palette with soft pastel tones to match the financial app's premium and transparent brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0ugBTyqbA6c3Ni6isdbScm52R3py1-rphomrapNtBhJPjtLgYOc6wKMgW7VdHODRs2zunDCaMiyrXkrd7p4FnDEOCl8q_gPxIMuLvIDcDS5bMSGpGX1MOI7il8Wr4gfuXXLpA9HsB53uayfTIoiiIHej795amlQggv0GbzjTWTMEWxg1owNueLh8wRygf7Nb4KTWrJu5Vq2hG9i-tVNMYIKOURk4GeEwQAOakx3TL9ezIG4jJLnqehHx4zCCi9reGEgGGHMZp6u7iQ"/>
+</div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">TomBudget</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity active:scale-95 transition-transform" data-icon="notifications">notifications</button>
+</header>
+<main class="pt-24 pb-32 px-margin-main max-w-2xl mx-auto space-y-stack-lg">
+<!-- Header Section -->
+<section class="space-y-stack-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">État des flux</h1>
+<p class="font-body-sm text-on-surface-variant">Analyse en temps réel de votre activité financière.</p>
+</section>
+<!-- Cash Flow Summary Bento -->
+<div class="grid grid-cols-2 gap-gutter-grid">
+<div class="glass-card p-card-padding rounded-xl space-y-2 border-l-4 border-l-secondary">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-lg" data-icon="trending_up">trending_up</span>
+<span class="font-label-caps text-label-caps uppercase">Total Entrées</span>
+</div>
+<div class="font-display-amount text-display-amount text-on-surface">4 850€</div>
+<div class="font-label-sm text-label-sm text-secondary">+12% vs mois dernier</div>
+</div>
+<div class="glass-card p-card-padding rounded-xl space-y-2 border-l-4 border-l-tertiary">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-lg" data-icon="trending_down">trending_down</span>
+<span class="font-label-caps text-label-caps uppercase">Total Sorties</span>
+</div>
+<div class="font-display-amount text-display-amount text-on-surface">2 120€</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">64% du budget utilisé</div>
+</div>
+</div>
+<!-- Cash Flow Visualization -->
+<section class="glass-card rounded-xl overflow-hidden shadow-sm">
+<div class="p-card-padding flex justify-between items-center">
+<span class="font-headline-md text-headline-md">Aperçu Hebdomadaire</span>
+<div class="flex gap-1 bg-surface-container rounded-full p-1">
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-white shadow-sm text-primary">Semaine</button>
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant">Mois</button>
+</div>
+</div>
+<div class="px-4 pb-4">
+<img class="w-full h-32 object-cover rounded-lg" data-alt="A clean, minimalist financial data visualization showing a smooth wave-like line graph representing cash flow trends. The graph features a soft lavender blue primary line against a semi-transparent grid, set on a bright white glassmorphic background. The mood is precise and modern, using subtle gradients and soft shadows to create depth, perfectly aligned with a professional budget management tool's visual language." src="https://lh3.googleusercontent.com/aida/ADBb0uhr7wMdfb8m4wfP_NhoI1pd7FRIAtgfhcpi8OoMWSkLzi5T__gUXKQf9LanWEoTWIPWEIIOhapH24muGOsQu7reHDXfM1XgkbxY67ZS471NsWEs2A6JEUQUQGAYZUucXZJmEk0U2h6YXcpdyCusZ7Kzuh3KBrr_V-eifwPd4imaHOfIozloDJU4xlYovnCoN_fC95CRQgyKYjwdO9mrN6OLvMqF9RjR44m1fov7siexBPoCXPgfwLQ8ANZogKN1aILL8oO9oQoAgw"/>
+</div>
+</section>
+<!-- Movements List -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-headline-md text-headline-md">Mouvements récents</h2>
+<button class="bg-primary/10 px-3 py-1.5 rounded-full text-primary font-label-sm text-label-sm flex items-center gap-1 hover:bg-primary/20 transition-colors">
+                    Filtrer <span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+</button>
+</div><div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-margin-main px-margin-main">
+<!-- Type Filter Group -->
+<div class="flex items-center gap-1 bg-surface-container rounded-full p-1 shrink-0">
+<button class="px-4 py-1.5 rounded-full text-label-sm font-bold bg-primary text-on-primary shadow-sm whitespace-nowrap">Toutes</button>
+<button class="px-4 py-1.5 rounded-full text-label-sm font-medium text-on-surface-variant hover:bg-surface-variant/50 transition-colors whitespace-nowrap">Entrées</button>
+<button class="px-4 py-1.5 rounded-full text-label-sm font-medium text-on-surface-variant hover:bg-surface-variant/50 transition-colors whitespace-nowrap">Sorties</button>
+</div>
+<!-- Category Filter -->
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-label-sm font-medium text-on-surface shrink-0 hover:bg-surface-container transition-colors">
+<span>Catégorie</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<!-- Date Filter -->
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-label-sm font-medium text-on-surface shrink-0 hover:bg-surface-container transition-colors">
+<span>Date</span>
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Group: Today -->
+<div class="space-y-2">
+<span class="font-label-caps text-label-caps text-outline uppercase px-1">Aujourd'hui</span>
+<!-- Transaction Item -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between hover:opacity-90 transition-opacity cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md">Courses Hebdo</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Supermarché Central</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-on-surface">-84,50 €</div>
+<div class="font-label-sm text-label-sm text-outline">14:32</div>
+</div>
+</div>
+<!-- Transaction Item -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between hover:opacity-90 transition-opacity cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md">Virement Salaire</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Tech Corp SAS</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-secondary">+3 200,00 €</div>
+<div class="font-label-sm text-label-sm text-outline">09:00</div>
+</div>
+</div>
+</div>
+<!-- Group: Yesterday -->
+<div class="space-y-2 mt-6">
+<span class="font-label-caps text-label-caps text-outline uppercase px-1">Hier</span>
+<!-- Transaction Item -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between hover:opacity-90 transition-opacity cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md">Le Petit Bistro</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Dîner &amp; Boissons</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-on-surface">-45,20 €</div>
+<div class="font-label-sm text-label-sm text-outline">20:15</div>
+</div>
+</div>
+<!-- Transaction Item -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between hover:opacity-90 transition-opacity cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md">Essence</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Station Total</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-on-surface">-65,00 €</div>
+<div class="font-label-sm text-label-sm text-outline">18:40</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Goal Progress -->
+<section class="glass-card p-card-padding rounded-xl relative overflow-hidden group border-none shadow-lg shadow-primary/5">
+<div class="relative z-10 flex items-center justify-between">
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Objectif Épargne</h3>
+<p class="font-body-sm text-on-surface-variant">Voyage au Japon • 85% complété</p>
+<div class="w-48 h-2 bg-surface-variant rounded-full mt-3">
+<div class="w-[85%] h-full bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-inner">
+<span class="material-symbols-outlined text-3xl" data-icon="flight_takeoff">flight_takeoff</span>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent pointer-events-none"></div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-surface/90 backdrop-blur-xl border-t border-white/20 shadow-[0_-4px_12px_rgba(71,77,197,0.08)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm mt-1">Transactions</span>
+</a>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Add</span>
+</button>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+<span class="font-label-sm text-label-sm mt-1">Goals</span>
+</a>
+</nav>
+</body></html>

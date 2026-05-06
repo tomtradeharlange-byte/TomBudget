@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ajouter une Transaction - TomBudget</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#166b4c",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a3645a",
+                        "surface-tint": "#4950c7",
+                        "primary-container": "#6067df",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf8fb",
+                        "secondary-container": "#a1f0c9",
+                        "on-secondary-fixed": "#002114",
+                        "on-tertiary-fixed-variant": "#6d372f",
+                        "on-secondary-fixed-variant": "#005137",
+                        "surface-bright": "#fcf8fb",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed": "#370d08",
+                        "secondary-fixed-dim": "#88d6b0",
+                        "on-primary-fixed": "#02006d",
+                        "surface-container-low": "#f6f3f5",
+                        "on-primary-fixed-variant": "#3035af",
+                        "surface": "#fcf8fb",
+                        "outline": "#767685",
+                        "inverse-primary": "#bfc2ff",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c6c5d6",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-high": "#eae7ea",
+                        "primary-fixed": "#e0e0ff",
+                        "secondary-fixed": "#a4f3cb",
+                        "surface-container": "#f0edef",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#874c43",
+                        "on-secondary-container": "#1d7050",
+                        "surface-dim": "#dcd9dc",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "on-background": "#1b1b1d",
+                        "on-surface": "#1b1b1d",
+                        "inverse-surface": "#303032",
+                        "primary": "#474dc5",
+                        "on-surface-variant": "#464653",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdad4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "card-padding": "20px",
+                        "margin-main": "20px",
+                        "stack-lg": "24px",
+                        "gutter-grid": "12px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "display-amount": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                        "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-image: radial-gradient(at 0% 0%, rgba(96, 103, 223, 0.08) 0px, transparent 50%),
+                              radial-gradient(at 100% 100%, rgba(161, 240, 201, 0.12) 0px, transparent 50%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg">
+<!-- TopAppBar (Transactional Variant) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/20 shadow-sm shadow-primary/10 flex justify-between items-center px-margin-main h-16">
+<button class="active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">Nouvelle Transaction</h1>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<main class="pt-24 pb-32 px-margin-main max-w-lg mx-auto flex flex-col gap-stack-lg">
+<!-- Large Numeric Input -->
+<div class="glass-card rounded-xl p-card-padding flex flex-col items-center gap-stack-sm shadow-sm shadow-primary/5">
+<span class="text-label-caps font-label-caps text-outline uppercase tracking-widest">Montant</span>
+<div class="flex items-center gap-2">
+<span class="font-display-amount text-display-amount text-primary">€</span>
+<input autofocus="" class="bg-transparent border-none focus:ring-0 font-display-amount text-display-amount text-on-surface w-48 text-center placeholder:text-surface-variant" placeholder="0,00" type="number"/>
+</div>
+</div>
+<!-- Expense/Income Toggle -->
+<div class="bg-surface-container-low p-1 rounded-full flex gap-1">
+<button class="flex-1 py-3 px-4 rounded-full font-headline-md text-headline-md transition-all bg-primary text-on-primary shadow-lg shadow-primary/20">
+                Dépense
+            </button>
+<button class="flex-1 py-3 px-4 rounded-full font-headline-md text-headline-md transition-all text-on-surface-variant hover:bg-surface-container-high">
+                Revenu
+            </button>
+</div>
+<!-- Category Grid -->
+<section>
+<h2 class="font-label-caps text-label-caps text-outline uppercase mb-stack-md px-1">Sélectionner une Catégorie</h2>
+<div class="grid grid-cols-3 gap-gutter-grid">
+<!-- Food -->
+<button class="glass-card rounded-xl p-stack-md flex flex-col items-center gap-2 active:scale-95 transition-transform border-primary/40 bg-primary-container/10">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Alimentation</span>
+</button>
+<!-- Transport -->
+<button class="glass-card rounded-xl p-stack-md flex flex-col items-center gap-2 active:scale-95 transition-transform hover:bg-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="commute">commute</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Transport</span>
+</button>
+<!-- Home -->
+<button class="glass-card rounded-xl p-stack-md flex flex-col items-center gap-2 active:scale-95 transition-transform hover:bg-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Maison</span>
+</button>
+<!-- Health -->
+<button class="glass-card rounded-xl p-stack-md flex flex-col items-center gap-2 active:scale-95 transition-transform hover:bg-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Santé</span>
+</button>
+<!-- Entertainment -->
+<button class="glass-card rounded-xl p-stack-md flex flex-col items-center gap-2 active:scale-95 transition-transform hover:bg-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="movie">movie</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Loisirs</span>
+</button>
+<!-- Others -->
+<button class="glass-card rounded-xl p-stack-md flex flex-col items-center gap-2 active:scale-95 transition-transform hover:bg-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-outline">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Autres</span>
+</button>
+</div>
+</section>
+<!-- Date & Note Fields -->
+<div class="flex flex-col gap-stack-md">
+<div class="glass-card rounded-xl p-card-padding flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-outline" data-icon="calendar_today">calendar_today</span>
+<div class="flex-1">
+<p class="text-label-sm text-outline font-label-sm">Date</p>
+<input class="bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-on-surface w-full" type="text" value="Aujourd'hui, 24 Oct"/>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="glass-card rounded-xl p-card-padding flex items-start gap-stack-md">
+<span class="material-symbols-outlined text-outline pt-1" data-icon="notes">notes</span>
+<div class="flex-1">
+<p class="text-label-sm text-outline font-label-sm">Note (Optionnel)</p>
+<textarea class="bg-transparent border-none p-0 focus:ring-0 font-body-lg text-body-lg text-on-surface w-full resize-none placeholder:text-outline-variant" placeholder="Ajouter une description..." rows="2"></textarea>
+</div>
+</div>
+</div>
+<!-- Contextual Visual (Updated with Chart style from IMAGE_6) -->
+<div class="relative w-full h-40 rounded-xl overflow-hidden mt-2 group bg-surface-container-low border border-outline-variant/30">
+<img alt="Suivi budgétaire visuel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-90" src="https://lh3.googleusercontent.com/aida/ADBb0ugBTyqbA6c3Ni6isdbScm52R3py1-rphomrapNtBhJPjtLgYOc6wKMgW7VdHODRs2zunDCaMiyrXkrd7p4FnDEOCl8q_gPxIMuLvIDcDS5bMSGpGX1MOI7il8Wr4gfuXXLpA9HsB53uayfTIoiiIHej795amlQggv0GbzjTWTMEWxg1owNueLh8wRygf7Nb4KTWrJu5Vq2hG9i-tVNMYIKOURk4GeEwQAOakx3TL9ezIG4jJLnqehHx4zCCi9reGEgGGHMZp6u7iQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/10 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-label-caps text-label-caps opacity-90">SUIVI INTELLIGENT</p>
+<p class="font-headline-md text-headline-md">La clarté financière commence ici.</p>
+</div>
+</div>
+</main>
+<!-- Bottom Save Button -->
+<div class="fixed bottom-0 left-0 w-full p-margin-main bg-gradient-to-t from-background via-background to-transparent pt-8">
+<button class="w-full bg-primary text-on-primary font-headline-lg text-headline-lg py-4 rounded-xl shadow-xl shadow-primary/30 active:scale-95 transition-transform">
+            Sauvegarder la Transaction
+        </button>
+</div>
+</body></html>

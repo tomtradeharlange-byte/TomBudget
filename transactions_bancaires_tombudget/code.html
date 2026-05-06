@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body {
+            background: radial-gradient(circle at top right, #e0e0ff 0%, #fcf8fb 40%),
+                        radial-gradient(circle at bottom left, #a4f3cb 0%, #fcf8fb 40%);
+            background-attachment: fixed;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#4950c7",
+                    "on-surface-variant": "#464653",
+                    "surface-bright": "#fcf8fb",
+                    "surface-variant": "#e4e2e4",
+                    "secondary-container": "#a1f0c9",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "secondary": "#166b4c",
+                    "surface-container-highest": "#e4e2e4",
+                    "tertiary": "#874c43",
+                    "surface": "#fcf8fb",
+                    "surface-container": "#f0edef",
+                    "on-tertiary-fixed": "#370d08",
+                    "tertiary-container": "#a3645a",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#005137",
+                    "on-primary-fixed": "#02006d",
+                    "secondary-fixed-dim": "#88d6b0",
+                    "on-tertiary-fixed-variant": "#6d372f",
+                    "on-secondary-container": "#1d7050",
+                    "outline-variant": "#c6c5d6",
+                    "on-primary-fixed-variant": "#3035af",
+                    "secondary-fixed": "#a4f3cb",
+                    "surface-container-low": "#f6f3f5",
+                    "background": "#fcf8fb",
+                    "on-surface": "#1b1b1d",
+                    "on-primary-container": "#fffbff",
+                    "on-background": "#1b1b1d",
+                    "surface-container-high": "#eae7ea",
+                    "primary-fixed": "#e0e0ff",
+                    "primary": "#474dc5",
+                    "inverse-on-surface": "#f3f0f2",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#bfc2ff",
+                    "surface-dim": "#dcd9dc",
+                    "primary-fixed-dim": "#bfc2ff",
+                    "on-secondary-fixed": "#002114",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffdad4",
+                    "primary-container": "#6067df",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#303032",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#767685",
+                    "on-tertiary-container": "#fffbff",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-main": "20px",
+                    "card-padding": "20px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "stack-lg": "24px",
+                    "gutter-grid": "12px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "display-amount": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                    "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-white/20 shadow-sm shadow-primary/10 flex justify-between items-center px-margin-main h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden border border-primary/20">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A high-end professional headshot of a young person in a bright, modern studio with soft lavender and mint lighting. The style is clean and minimalist, reflecting a modern corporate aesthetic with a focus on transparency and optimism. The lighting is diffused and airy, creating a professional yet approachable presence that integrates perfectly with the TomBudget UI." src="https://lh3.googleusercontent.com/aida/ADBb0ugBTyqbA6c3Ni6isdbScm52R3py1-rphomrapNtBhJPjtLgYOc6wKMgW7VdHODRs2zunDCaMiyrXkrd7p4FnDEOCl8q_gPxIMuLvIDcDS5bMSGpGX1MOI7il8Wr4gfuXXLpA9HsB53uayfTIoiiIHej795amlQggv0GbzjTWTMEWxg1owNueLh8wRygf7Nb4KTWrJu5Vq2hG9i-tVNMYIKOURk4GeEwQAOakx3TL9ezIG4jJLnqehHx4zCCi9reGEgGGHMZp6u7iQ"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">TomBudget</h1>
+</div>
+<button class="active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-margin-main flex flex-col gap-stack-lg max-w-md mx-auto">
+<!-- Balance Hero Card -->
+<section class="glass-card rounded-xl p-card-padding relative overflow-hidden shadow-sm shadow-primary/10">
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col gap-1">
+<h2 class="text-on-surface-variant font-label-caps text-label-caps">Solde Bancaire</h2>
+<p class="font-display-amount text-display-amount text-primary">2 450,00 €</p>
+</div>
+<div class="bg-primary/10 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</div>
+</div>
+<div class="mt-stack-md flex items-center gap-2 relative z-10">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" style="font-variation-settings: 'wght' 300;">sync</span>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Dernière synchronisation : Aujourd'hui, 09:42</p>
+</div>
+<!-- Subtle background abstract for the card -->
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Quick Actions (Asymmetric Layout) -->
+<div class="grid grid-cols-2 gap-gutter-grid">
+<button class="glass-card p-4 rounded-xl flex items-center gap-3 active:scale-95 transition-transform border-white/40">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">Virement</span>
+</button>
+<button class="glass-card p-4 rounded-xl flex items-center gap-3 active:scale-95 transition-transform border-white/40">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface">Analyses</span>
+</button>
+</div>
+<!-- Transactions Section -->
+<section class="flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Transactions Récentes</h3>
+<button class="text-primary font-label-sm text-label-sm font-bold">Voir tout</button>
+</div>
+<div class="flex flex-col gap-gutter-grid">
+<!-- Transaction Item: Starbucks -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between shadow-sm shadow-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-600">coffee</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">Starbucks</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+                                14 Oct, 08:30 • <span class="material-symbols-outlined text-[12px] text-secondary">check_circle</span> Verifié
+                            </p>
+</div>
+</div>
+<p class="font-headline-md text-headline-md text-error">- 5,40 €</p>
+</div>
+<!-- Transaction Item: Salaire -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between shadow-sm shadow-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-600">work</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">Salaire TechCorp</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+                                13 Oct, 09:00 • <span class="material-symbols-outlined text-[12px] text-secondary">check_circle</span> Verifié
+                            </p>
+</div>
+</div>
+<p class="font-headline-md text-headline-md text-secondary">+ 2 850,00 €</p>
+</div>
+<!-- Transaction Item: Amazon (Pending) -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between shadow-sm shadow-primary/5 opacity-90">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600">shopping_bag</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">Amazon.fr</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+                                Hier, 18:45 • <span class="material-symbols-outlined text-[12px] text-outline">pending</span> En attente
+                            </p>
+</div>
+</div>
+<p class="font-headline-md text-headline-md text-error">- 42,99 €</p>
+</div>
+<!-- Transaction Item: Supermarché -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between shadow-sm shadow-primary/5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-mint-100 flex items-center justify-center" style="background-color: #e6fffa;">
+<span class="material-symbols-outlined text-teal-600">shopping_cart</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface">Carrefour City</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+                                12 Oct, 17:20 • <span class="material-symbols-outlined text-[12px] text-secondary">check_circle</span> Verifié
+                            </p>
+</div>
+</div>
+<p class="font-headline-md text-headline-md text-error">- 24,15 €</p>
+</div>
+</div>
+</section>
+<!-- Decorative Card Image -->
+<div class="w-full h-40 rounded-2xl overflow-hidden relative glass-card p-0 mt-stack-md">
+<img alt="Card Promotion" class="w-full h-full object-cover" data-alt="A macro-style photograph of a premium, translucent glassmorphic bank card with elegant holographic foil details. The background is a soft-focus bokeh of vibrant lavender and emerald tones, suggesting a high-end financial environment. The lighting is crisp and clean, highlighting the sharp edges and sophisticated texture of the card material, embodying the modern corporate transparency and optimistic brand identity of TomBudget." src="https://lh3.googleusercontent.com/aida/ADBb0uhr7wMdfb8m4wfP_NhoI1pd7FRIAtgfhcpi8OoMWSkLzi5T__gUXKQf9LanWEoTWIPWEIIOhapH24muGOsQu7reHDXfM1XgkbxY67ZS471NsWEs2A6JEUQUQGAYZUucXZJmEk0U2h6YXcpdyCusZ7Kzuh3KBrr_V-eifwPd4imaHOfIozloDJU4xlYovnCoN_fC95CRQgyKYjwdO9mrN6OLvMqF9RjR44m1fov7siexBPoCXPgfwLQ8ANZogKN1aILL8oO9oQoAgw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-6">
+<p class="text-white font-headline-md text-headline-md">Assurez votre avenir</p>
+<p class="text-white/80 font-body-sm text-body-sm">Activez la protection contre la fraude en un clic.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-xl border-t border-white/20 shadow-[0_-4px_12px_rgba(71,77,197,0.08)] z-50 rounded-t-xl">
+<!-- Dashboard -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</button>
+<!-- Transactions (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-sm text-label-sm">Transactions</span>
+</button>
+<!-- Add -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm">Add</span>
+</button>
+<!-- Goals -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+<span class="font-label-sm text-label-sm">Goals</span>
+</button>
+</nav>
+</body></html>

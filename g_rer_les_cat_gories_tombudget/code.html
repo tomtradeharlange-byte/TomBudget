@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#4950c7",
+                        "surface-bright": "#fcf8fb",
+                        "inverse-surface": "#303032",
+                        "secondary-container": "#a1f0c9",
+                        "on-tertiary-fixed-variant": "#6d372f",
+                        "surface-variant": "#e4e2e4",
+                        "tertiary-container": "#a3645a",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fffbff",
+                        "tertiary": "#874c43",
+                        "outline": "#767685",
+                        "surface-container-high": "#eae7ea",
+                        "secondary-fixed": "#a4f3cb",
+                        "on-secondary-container": "#1d7050",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#370d08",
+                        "on-surface-variant": "#464653",
+                        "on-surface": "#1b1b1d",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-container": "#f0edef",
+                        "surface": "#fcf8fb",
+                        "on-primary-fixed": "#02006d",
+                        "inverse-primary": "#bfc2ff",
+                        "surface-dim": "#dcd9dc",
+                        "primary-fixed": "#e0e0ff",
+                        "primary-container": "#6067df",
+                        "on-secondary-fixed-variant": "#005137",
+                        "on-secondary-fixed": "#002114",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "primary": "#474dc5",
+                        "outline-variant": "#c6c5d6",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "on-background": "#1b1b1d",
+                        "secondary": "#166b4c",
+                        "tertiary-fixed": "#ffdad4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf8fb",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-fixed-dim": "#88d6b0",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3035af"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter-grid": "12px",
+                        "card-padding": "20px",
+                        "stack-lg": "24px",
+                        "margin-main": "20px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "display-amount": ["Manrope"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(252, 248, 251, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-white/20 shadow-sm shadow-primary/10 flex justify-between items-center px-margin-main h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up headshot of a smiling young woman with warm lighting in a modern, bright office environment. The image uses a clean, light-mode aesthetic with soft shadows and high-key illumination, matching a premium financial application's branding. The colors are natural and vibrant, emphasizing a sense of transparency and approachability." src="https://lh3.googleusercontent.com/aida/ADBb0ugBTyqbA6c3Ni6isdbScm52R3py1-rphomrapNtBhJPjtLgYOc6wKMgW7VdHODRs2zunDCaMiyrXkrd7p4FnDEOCl8q_gPxIMuLvIDcDS5bMSGpGX1MOI7il8Wr4gfuXXLpA9HsB53uayfTIoiiIHej795amlQggv0GbzjTWTMEWxg1owNueLh8wRygf7Nb4KTWrJu5Vq2hG9i-tVNMYIKOURk4GeEwQAOakx3TL9ezIG4jJLnqehHx4zCCi9reGEgGGHMZp6u7iQ"/>
+</div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed">TomBudget</span>
+</div>
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-margin-main max-w-2xl mx-auto">
+<!-- Header Section -->
+<div class="mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Gérer les catégories</h1>
+<p class="font-body-sm text-on-surface-variant">Personnalisez vos postes de dépenses pour un meilleur suivi.</p>
+</div>
+<!-- Add Category Action -->
+<div class="mb-stack-lg">
+<button class="w-full py-4 px-6 bg-primary text-on-primary rounded-xl font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                Ajouter une catégorie
+            </button>
+</div>
+<!-- Categories Bento Grid -->
+<div class="space-y-gutter-grid">
+<!-- Category Item: Food -->
+<div class="glass-card rounded-xl p-card-padding flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Alimentation</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">24 transactions ce mois</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Category Item: Transport -->
+<div class="glass-card rounded-xl p-card-padding flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="directions_car" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Transport</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">12 transactions ce mois</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Category Item: Housing -->
+<div class="glass-card rounded-xl p-card-padding flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Logement</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">4 transactions ce mois</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Category Item: Health -->
+<div class="glass-card rounded-xl p-card-padding flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="medical_services" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Santé</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">2 transactions ce mois</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Category Item: Leisure -->
+<div class="glass-card rounded-xl p-card-padding flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="movie" style="font-variation-settings: 'FILL' 1;">movie</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Loisirs</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">8 transactions ce mois</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-error hover:bg-error/10 rounded-lg transition-colors active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Decorative Illustration -->
+<div class="mt-stack-lg rounded-2xl overflow-hidden relative h-40 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A beautiful wide-angle digital illustration of a serene workspace with a minimalist desk, a soft glowing lamp, and stylized financial charts floating subtly in the air. The scene is bathed in a calming palette of lavender blue, mint green, and coral, reflecting an optimistic and transparent approach to money management. The lighting is soft and ambient, creating a high-end corporate glassmorphism aesthetic." src="https://lh3.googleusercontent.com/aida/ADBb0uhr7wMdfb8m4wfP_NhoI1pd7FRIAtgfhcpi8OoMWSkLzi5T__gUXKQf9LanWEoTWIPWEIIOhapH24muGOsQu7reHDXfM1XgkbxY67ZS471NsWEs2A6JEUQUQGAYZUucXZJmEk0U2h6YXcpdyCusZ7Kzuh3KBrr_V-eifwPd4imaHOfIozloDJU4xlYovnCoN_fC95CRQgyKYjwdO9mrN6OLvMqF9RjR44m1fov7siexBPoCXPgfwLQ8ANZogKN1aILL8oO9oQoAgw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-xl border-t border-white/20 shadow-[0_-4px_12px_rgba(71,77,197,0.08)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">Transactions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm">Add</span>
+</a>
+<!-- Assuming Categories are part of the setup flow/settings or accessible from a more prominent tab, but for this demo context, let's treat "Goals" as active if we had to map it or keep it consistent with the provided JSON tabs -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="target" style="font-variation-settings: 'FILL' 1;">target</span>
+<span class="font-label-sm text-label-sm">Goals</span>
+</a>
+</nav>
+</body></html>

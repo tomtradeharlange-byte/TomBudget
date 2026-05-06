@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "tertiary": "#874c43",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#a3645a",
+                        "surface-dim": "#dcd9dc",
+                        "on-primary-fixed-variant": "#3035af",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-container-low": "#f6f3f5",
+                        "on-tertiary-fixed-variant": "#6d372f",
+                        "surface-container-high": "#eae7ea",
+                        "on-primary-fixed": "#02006d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#a1f0c9",
+                        "outline": "#767685",
+                        "on-background": "#1b1b1d",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#464653",
+                        "on-tertiary-fixed": "#370d08",
+                        "on-surface": "#1b1b1d",
+                        "primary-fixed-dim": "#bfc2ff",
+                        "background": "#fcf8fb",
+                        "secondary-fixed-dim": "#88d6b0",
+                        "inverse-surface": "#303032",
+                        "inverse-primary": "#bfc2ff",
+                        "tertiary-fixed": "#ffdad4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#005137",
+                        "surface-container": "#f0edef",
+                        "error-container": "#ffdad6",
+                        "primary": "#474dc5",
+                        "inverse-on-surface": "#f3f0f2",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fcf8fb",
+                        "primary-container": "#6067df",
+                        "secondary": "#166b4c",
+                        "on-primary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e4e2e4",
+                        "on-secondary-fixed": "#002114",
+                        "surface": "#fcf8fb",
+                        "on-secondary-container": "#1d7050",
+                        "surface-tint": "#4950c7",
+                        "outline-variant": "#c6c5d6",
+                        "secondary-fixed": "#a4f3cb",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#e0e0ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "gutter-grid": "12px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-main": "20px",
+                        "card-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "display-amount": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-sm": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                        "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen pb-32">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/20 shadow-sm shadow-primary/10 flex justify-between items-center px-margin-main h-16">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary" data-icon="warning">warning</span>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">TomBudget</h1>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young business person in a bright, modern office with soft daylight. The image has a clean, airy aesthetic with vibrant corporate colors in the background, matching a high-end financial application interface. The lighting is flattering and high-key, reflecting an optimistic and transparent brand personality." src="https://lh3.googleusercontent.com/aida/ADBb0ugBTyqbA6c3Ni6isdbScm52R3py1-rphomrapNtBhJPjtLgYOc6wKMgW7VdHODRs2zunDCaMiyrXkrd7p4FnDEOCl8q_gPxIMuLvIDcDS5bMSGpGX1MOI7il8Wr4gfuXXLpA9HsB53uayfTIoiiIHej795amlQggv0GbzjTWTMEWxg1owNueLh8wRygf7Nb4KTWrJu5Vq2hG9i-tVNMYIKOURk4GeEwQAOakx3TL9ezIG4jJLnqehHx4zCCi9reGEgGGHMZp6u7iQ"/>
+</div>
+</header>
+<main class="mt-20 px-margin-main space-y-stack-lg">
+<!-- Alert Header Section -->
+<section class="space-y-stack-sm text-center">
+<div class="inline-flex items-center justify-center p-4 rounded-full bg-error/10 text-error mb-stack-sm">
+<span class="material-symbols-outlined text-4xl" data-icon="report" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-error">Limite Quotidienne Dépassée</h2>
+<p class="text-on-surface-variant font-body-sm">Attention ! Vous avez dépassé votre budget prévu pour aujourd'hui.</p>
+</section>
+<!-- Overspent Summary Card -->
+<section class="glass-card rounded-xl p-card-padding shadow-sm">
+<div class="flex flex-col items-center space-y-stack-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">MONTANT DÉPASSÉ</span>
+<div class="font-display-amount text-display-amount text-error flex items-baseline">
+<span class="text-headline-lg font-bold mr-1">€</span>14.50
+                </div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden mt-stack-md">
+<div class="h-full bg-error w-full rounded-full"></div>
+</div>
+<div class="w-full flex justify-between font-label-sm text-label-sm pt-stack-sm">
+<span class="text-on-surface-variant">Prévu: €40.00</span>
+<span class="text-error font-bold">Actuel: €54.50</span>
+</div>
+</div>
+</section>
+<!-- Visual Comparison Section -->
+<section class="grid grid-cols-2 gap-gutter-grid">
+<div class="glass-card rounded-xl p-stack-md space-y-stack-sm">
+<div class="flex items-center gap-stack-sm text-secondary">
+<span class="material-symbols-outlined text-headline-md" data-icon="event_available">event_available</span>
+<span class="font-label-caps text-label-caps uppercase">Budget</span>
+</div>
+<p class="font-headline-lg text-headline-lg">40,00€</p>
+<p class="font-body-sm text-on-surface-variant">Objectif sain</p>
+</div>
+<div class="glass-card rounded-xl p-stack-md space-y-stack-sm border-error/20">
+<div class="flex items-center gap-stack-sm text-error">
+<span class="material-symbols-outlined text-headline-md" data-icon="payments">payments</span>
+<span class="font-label-caps text-label-caps uppercase">Dépensé</span>
+</div>
+<p class="font-headline-lg text-headline-lg">54,50€</p>
+<p class="font-body-sm text-error">Excès détecté</p>
+</div>
+</section>
+<!-- Transactions List -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md">Transactions du jour</h3>
+<span class="font-label-sm text-label-sm text-primary">Voir tout</span>
+</div>
+<div class="space-y-gutter-grid">
+<!-- Transaction 1 -->
+<div class="glass-card flex items-center justify-between p-stack-md rounded-xl">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed-dim flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md">Déjeuner Bistro</p>
+<p class="font-body-sm text-on-surface-variant">Restauration • 12:45</p>
+</div>
+</div>
+<span class="font-headline-md text-headline-md text-error">-28,50€</span>
+</div>
+<!-- Transaction 2 -->
+<div class="glass-card flex items-center justify-between p-stack-md rounded-xl">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="directions_bus">directions_bus</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md">Ticket Transport</p>
+<p class="font-body-sm text-on-surface-variant">Transport • 08:30</p>
+</div>
+</div>
+<span class="font-headline-md text-headline-md text-error">-6,00€</span>
+</div>
+<!-- Transaction 3 -->
+<div class="glass-card flex items-center justify-between p-stack-md rounded-xl">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md">Supermarché Express</p>
+<p class="font-body-sm text-on-surface-variant">Courses • 17:15</p>
+</div>
+</div>
+<span class="font-headline-md text-headline-md text-error">-20,00€</span>
+</div>
+</div>
+</section>
+<!-- CTA Buttons -->
+<section class="space-y-stack-md pt-stack-lg">
+<button class="w-full py-4 bg-primary text-on-primary font-headline-md rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                Ajuster le Rythme Quotidien
+            </button>
+<button class="w-full py-4 border-2 border-primary text-primary font-headline-md rounded-xl active:scale-95 transition-transform bg-transparent">
+                Retour au Tableau de Bord
+            </button>
+</section>
+<!-- Promotional Banner -->
+<section class="relative rounded-2xl overflow-hidden h-32 flex items-center px-card-padding">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A sleek, modern panoramic background for a financial app, featuring soft gradients of lavender blue and mint green. Subtle glassmorphic shapes and thin white accent lines create a high-end corporate feel. The lighting is diffused and professional, suggesting a premium user experience for budget tracking and financial management." src="https://lh3.googleusercontent.com/aida/ADBb0uh9wjmchpO1AlJ_f4nPgTD0blmhiMriHoOY3_VajLkHJs5bG4QGd-Uejj5QNVTCm2JOADXx6C6CFDSJcOmCmLRBxP2Ru2f09sgshF5M74dEE6raRrN9rRHL1evr1WcWe2y3rB9l6pAEfhU-nZ6i-CD1XXcW9DFMXpPMU-e2Myng1uuPRXsYdg5qGl4d1Ax0hPupWCPv3Tf27V_fF3GwB_hUFrjCl1qLsk8afeq9NVNhlrHNGyiPo3jm1wfcPPmESiuqWBxl83_4yl0"/>
+<div class="relative z-10 text-on-surface">
+<p class="font-headline-md text-primary">Conseil TomBudget</p>
+<p class="font-body-sm text-on-surface-variant max-w-[200px]">Économisez 5€ demain pour équilibrer votre semaine.</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-6 bg-surface/90 backdrop-blur-xl border-t border-white/20 shadow-[0_-4px_12px_rgba(71,77,197,0.08)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm">Transactions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container-high/50 transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="target">target</span>
+<span class="font-label-sm text-label-sm">Goals</span>
+</a>
+</nav>
+</body></html>

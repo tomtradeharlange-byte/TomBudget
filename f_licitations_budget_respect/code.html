@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body {
+            background-color: #fcf8fb;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c6c5d6",
+                    "inverse-on-surface": "#f3f0f2",
+                    "on-tertiary-fixed-variant": "#6d372f",
+                    "on-secondary-fixed-variant": "#005137",
+                    "surface-variant": "#e4e2e4",
+                    "surface-container-low": "#f6f3f5",
+                    "on-primary-fixed-variant": "#3035af",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1b1b1d",
+                    "inverse-surface": "#303032",
+                    "primary": "#474dc5",
+                    "primary-container": "#6067df",
+                    "secondary-fixed-dim": "#88d6b0",
+                    "on-primary-container": "#fffbff",
+                    "surface-container": "#f0edef",
+                    "secondary": "#166b4c",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#bfc2ff",
+                    "surface-container-highest": "#e4e2e4",
+                    "primary-fixed": "#e0e0ff",
+                    "on-surface": "#1b1b1d",
+                    "tertiary": "#874c43",
+                    "on-secondary-container": "#1d7050",
+                    "on-tertiary-fixed": "#370d08",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#002114",
+                    "surface-tint": "#4950c7",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#fcf8fb",
+                    "tertiary-fixed": "#ffdad4",
+                    "surface": "#fcf8fb",
+                    "outline": "#767685",
+                    "tertiary-container": "#a3645a",
+                    "primary-fixed-dim": "#bfc2ff",
+                    "surface-container-high": "#eae7ea",
+                    "secondary-fixed": "#a4f3cb",
+                    "on-primary-fixed": "#02006d",
+                    "surface-dim": "#dcd9dc",
+                    "on-secondary": "#ffffff",
+                    "background": "#fcf8fb",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-container": "#a1f0c9",
+                    "on-surface-variant": "#464653"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "card-padding": "20px",
+                    "gutter-grid": "12px",
+                    "margin-main": "20px"
+            },
+            "fontFamily": {
+                    "display-amount": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "body-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-amount": ["34px", {"lineHeight": "41px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                    "headline-md": ["17px", {"lineHeight": "22px", "fontWeight": "600"}],
+                    "headline-lg": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-sm": ["15px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Header Navigation Shell (Suppressed as this is a focused celebration screen) -->
+<!-- Applying top-level structure based on JSON but prioritizing the 'Success' state -->
+<main class="min-h-screen flex flex-col relative overflow-hidden">
+<!-- Festive Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<!-- Large Soft Gradient Blooms -->
+<div class="absolute -top-20 -left-20 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px]"></div>
+<div class="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-secondary-container/30 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 left-1/4 w-80 h-80 bg-tertiary-fixed/20 rounded-full blur-[80px]"></div>
+</div>
+<!-- Celebration Canvas -->
+<div class="relative z-10 flex-1 flex flex-col items-center justify-center px-margin-main pb-24">
+<!-- Confetti & Celebration Header Image -->
+<div class="w-full max-w-md mb-stack-lg overflow-hidden rounded-3xl shadow-lg">
+<img class="w-full h-auto object-cover transform scale-105" data-alt="A vibrant digital illustration of a celebratory scene with high-end glassmorphic finish. Gold and lavender confetti fragments float gracefully in a bright, modern light-mode environment. A stylized champagne bottle with a soft pastel label is depicted mid-pop, with a gentle effervescent spray of bubbles and shimmering particles. The lighting is ethereal and high-key, aligning with the TomBudget brand colors of lavender blue and mint green." src="https://lh3.googleusercontent.com/aida/ADBb0ugcazNLpbrt1_pNN71ATJ9I6xyyBCRN7a4DRfnJ3nB8ckKCStw4BW1y5ze5lNHAfY8sWWRuJ3Ey6fupyNuYfXJeJZFaKUPZIahOKwwPpQt6Xt9_9WPiyH1x4B5k7IwG4XB4cL2wXngUAsWKxQd_7s2gugKtjoGDKpIEPgqxpFRzIu2zM12cGsc--VvloOAeN3K2GOoQzCtdLMgi5XTFsazMJ06PNeAGyPxBSXPBmMlHTcixERaWr9JeaOJlq1f_nQJoycYZ7TY9xMU"/>
+</div>
+<!-- Congratulations Message -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-stack-sm">Congratulations!</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[280px] mx-auto">You've successfully respected your budget this month. That's a huge win!</p>
+</div>
+<!-- Savings Bento Card -->
+<div class="w-full max-w-md glass-card rounded-[32px] p-card-padding shadow-sm shadow-primary/10 flex flex-col items-center text-center mb-stack-lg">
+<span class="font-label-caps text-label-caps text-secondary mb-1">TOTAL SAVINGS</span>
+<div class="font-display-amount text-display-amount text-primary mb-4">$1,240.50</div>
+<!-- Progress Visual -->
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden mb-stack-md">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+<div class="grid grid-cols-2 gap-stack-md w-full">
+<div class="bg-secondary-container/20 rounded-2xl p-4">
+<span class="block font-label-sm text-label-sm text-secondary mb-1">Efficiency</span>
+<span class="font-headline-md text-headline-md text-secondary">+12%</span>
+</div>
+<div class="bg-primary-container/10 rounded-2xl p-4">
+<span class="block font-label-sm text-label-sm text-primary mb-1">Goal Hit</span>
+<span class="font-headline-md text-headline-md text-primary">100%</span>
+</div>
+</div>
+</div>
+<!-- Visual Accent Image -->
+<div class="w-full max-w-md mb-stack-lg">
+<img class="w-full h-20 object-cover rounded-2xl opacity-80" data-alt="An abstract panoramic visual representing financial growth and stability. Soft, flowing gradients of lavender blue and mint green overlap with transparent glass-like textures. Minimalist geometric patterns and soft-focus sparks create a sense of professional accomplishment and financial clarity. The overall aesthetic is clean, corporate-modern, and highly optimistic, matching the TomBudget light theme." src="https://lh3.googleusercontent.com/aida/ADBb0uh9wjmchpO1AlJ_f4nPgTD0blmhiMriHoOY3_VajLkHJs5bG4QGd-Uejj5QNVTCm2JOADXx6C6CFDSJcOmCmLRBxP2Ru2f09sgshF5M74dEE6raRrN9rRHL1evr1WcWe2y3rB9l6pAEfhU-nZ6i-CD1XXcW9DFMXpPMU-e2Myng1uuPRXsYdg5qGl4d1Ax0hPupWCPv3Tf27V_fF3GwB_hUFrjCl1qLsk8afeq9NVNhlrHNGyiPo3jm1wfcPPmESiuqWBxl83_4yl0"/>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-md space-y-stack-md">
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-4 rounded-2xl shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                    View Monthly Summary
+                </button>
+<button class="w-full bg-transparent border-2 border-primary text-primary font-headline-md text-headline-md py-4 rounded-2xl active:scale-95 transition-transform">
+                    Set New Goal
+                </button>
+</div>
+</div>
+<!-- Decorative Bottom Image -->
+<div class="absolute bottom-0 left-0 w-full z-0 opacity-40">
+<img class="w-full h-32 object-cover" data-alt="A wide-angle decorative background strip showing a minimalist and luxurious digital texture. The image features soft waves of translucent material in pastel lavender and seafoam green, softly lit from above. The composition is clean and breathable, designed to sit at the base of the UI to provide a sense of grounded elegance and high-end modern design." src="https://lh3.googleusercontent.com/aida/ADBb0uhr7wMdfb8m4wfP_NhoI1pd7FRIAtgfhcpi8OoMWSkLzi5T__gUXKQf9LanWEoTWIPWEIIOhapH24muGOsQu7reHDXfM1XgkbxY67ZS471NsWEs2A6JEUQUQGAYZUucXZJmEk0U2h6YXcpdyCusZ7Kzuh3KBrr_V-eifwPd4imaHOfIozloDJU4xlYovnCoN_fC95CRQgyKYjwdO9mrN6OLvMqF9RjR44m1fov7siexBPoCXPgfwLQ8ANZogKN1aILL8oO9oQoAgw"/>
+</div>
+</main>
+<!-- Navigation Suppressed for this transactional success screen per "Shell Visibility & Relevance" rule -->
+</body></html>
