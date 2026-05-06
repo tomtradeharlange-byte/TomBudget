@@ -108,10 +108,10 @@ class CSVImportService {
 }
 
 struct ColumnMapping {
-    let dateColumn: Int
-    let amountColumn: Int
-    let descriptionColumn: Int?
-    let categoryColumn: Int?
+    var dateColumn: Int
+    var amountColumn: Int
+    var descriptionColumn: Int?
+    var categoryColumn: Int?
     
     static let `default` = ColumnMapping(dateColumn: 0, amountColumn: 1, descriptionColumn: 2, categoryColumn: 3)
 }

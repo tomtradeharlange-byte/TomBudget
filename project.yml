@@ -9,7 +9,12 @@ targets:
     platform: iOS
     sources:
       - path: TomBudget
+        includes:
+          - "**/*.swift"
+          - "**/*.xcdatamodel"
+          - "*.plist"
     settings:
       INFOPLIST_FILE: TomBudget/Info.plist
       PRODUCT_BUNDLE_IDENTIFIER: com.tombudget.app
       SWIFT_VERSION: "5.0"
+      ENABLE_COREDATA: "YES"

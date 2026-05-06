@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		10D4CDEF478C9B874C091DDB /* TomBudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1082912DEB40EC7481563FC /* TomBudgetApp.swift */; };
 		1985A19CA10EFE079E6CECF9 /* GoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76E5720B0DE5AD7BF7C35F5 /* GoalsView.swift */; };
+		23083F7FAB445EBF00EC1147 /* CSVImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C936B532742B1C8A33179 /* CSVImportView.swift */; };
 		2DDE27E4BE536AE70D20416E /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A859A347AC2FBC9DECD5C4 /* SecurityService.swift */; };
 		3AA6C9865EE336732756C3EB /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED698C5D997BB4A7BC0AF4B1 /* AlertsView.swift */; };
 		435EFE0DE19CE3DED796B648 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B756DF31612CDF1582EBDBC4 /* Transaction.swift */; };
@@ -17,14 +18,19 @@
 		5D3B29120912AB0664058C98 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B712C9E2025C65D100BAA50 /* Typography.swift */; };
 		67A40E07488A53DAE396DA60 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40705B5BD58E694AF0F24AF /* AddTransactionView.swift */; };
 		ABE57E473830CDAF9E859FC6 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145A4953C129B2966FBE9CD /* GlassCard.swift */; };
+		B93C66FB2F00AEB04D405F61 /* CSVImportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115BCEB2D3A76FFB99F2EEF /* CSVImportService.swift */; };
 		BC6047AB49084BC09F5FB9E5 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E013926C52B577E4FE0874DD /* TransactionsView.swift */; };
 		C2EDF004E9365DB0EE36160F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2B6E0C52036024D75E1C18 /* ContentView.swift */; };
+		CBD47C4149CDB1F8A207258E /* TransactionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3767A341F620AD6579433E /* TransactionStore.swift */; };
 		D339B56D1FD5AD550166F6C8 /* MonthlyReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BDB51D2373BCB70C4C1881 /* MonthlyReportView.swift */; };
 		DA71BD3A09853214BCBC5F74 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA802DAEC64CBBE9AC25CE6 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0115BCEB2D3A76FFB99F2EEF /* CSVImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImportService.swift; sourceTree = "<group>"; };
 		2145A4953C129B2966FBE9CD /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		494C936B532742B1C8A33179 /* CSVImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVImportView.swift; sourceTree = "<group>"; };
+		5A3767A341F620AD6579433E /* TransactionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStore.swift; sourceTree = "<group>"; };
 		60BDB51D2373BCB70C4C1881 /* MonthlyReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyReportView.swift; sourceTree = "<group>"; };
 		7BA802DAEC64CBBE9AC25CE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8B712C9E2025C65D100BAA50 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B756DF31612CDF1582EBDBC4 /* Transaction.swift */,
+				5A3767A341F620AD6579433E /* TransactionStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -86,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				D40705B5BD58E694AF0F24AF /* AddTransactionView.swift */,
+				494C936B532742B1C8A33179 /* CSVImportView.swift */,
 				E013926C52B577E4FE0874DD /* TransactionsView.swift */,
 			);
 			path = Transactions;
@@ -124,6 +132,7 @@
 		E1B6F2D694D293FA7D664514 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0115BCEB2D3A76FFB99F2EEF /* CSVImportService.swift */,
 				A6A859A347AC2FBC9DECD5C4 /* SecurityService.swift */,
 			);
 			path = Services;
@@ -143,13 +152,6 @@
 				D98D70F5210A2488ED6C1393 /* TomBudget.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		"TEMP_FAB171EF-092F-4224-9018-39B95C515557" /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +211,8 @@
 			files = (
 				67A40E07488A53DAE396DA60 /* AddTransactionView.swift in Sources */,
 				3AA6C9865EE336732756C3EB /* AlertsView.swift in Sources */,
+				B93C66FB2F00AEB04D405F61 /* CSVImportService.swift in Sources */,
+				23083F7FAB445EBF00EC1147 /* CSVImportView.swift in Sources */,
 				4CBA6D3A477900410B67EB49 /* Colors.swift in Sources */,
 				C2EDF004E9365DB0EE36160F /* ContentView.swift in Sources */,
 				5A9FA69FF1D45FC6082C124C /* DashboardView.swift in Sources */,
@@ -219,6 +223,7 @@
 				DA71BD3A09853214BCBC5F74 /* SettingsView.swift in Sources */,
 				10D4CDEF478C9B874C091DDB /* TomBudgetApp.swift in Sources */,
 				435EFE0DE19CE3DED796B648 /* Transaction.swift in Sources */,
+				CBD47C4149CDB1F8A207258E /* TransactionStore.swift in Sources */,
 				BC6047AB49084BC09F5FB9E5 /* TransactionsView.swift in Sources */,
 				5D3B29120912AB0664058C98 /* Typography.swift in Sources */,
 			);
@@ -288,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_COREDATA = YES;
 				INFOPLIST_FILE = TomBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_COREDATA = YES;
 				INFOPLIST_FILE = TomBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
