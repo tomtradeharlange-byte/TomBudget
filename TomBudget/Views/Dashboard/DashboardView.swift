@@ -1,6 +1,12 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \TransactionEntity.date, ascending: false)],
+        animation: .default)
+    private var transactions: FetchedResults<TransactionEntity>
+    
     @State private var totalRemaining: Double = 2450.80
     @State private var monthlyBudget: Double = 4000.00
     @State private var progress: Double = 0.65
@@ -103,11 +109,15 @@ struct DashboardView: View {
     }
     
     var sampleTransactions: [Transaction] {
-        [
-            Transaction(amount: 45.50, category: .groceries, date: Date(), note: "Supermarket", isExpense: true),
-            Transaction(amount: 1200.00, category: .salary, date: Date(), note: "Monthly salary", isExpense: false),
-            Transaction(amount: 35.00, category: .dining, date: Date(), note: "Lunch", isExpense: true)
-        ]
+        transactions.map { entity in
+            Transaction(
+                amount: entity.amount,
+                category: Transaction.Category(rawValue: entity.category ?? "") ?? .groceries,
+                date: entity.date ?? Date(),
+                note: entity.note,
+                isExpense: entity.isExpense
+            )
+        }
     }
 }
 

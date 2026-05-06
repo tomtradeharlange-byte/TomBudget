@@ -1,6 +1,13 @@
 import SwiftUI
+import CoreData
 
 struct TransactionsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \TransactionEntity.date, ascending: false)],
+        animation: .default)
+    private var transactions: FetchedResults<TransactionEntity>
+    
     @State private var searchText = ""
     @State private var selectedFilter = 0
     
@@ -66,12 +73,14 @@ struct TransactionsView: View {
     }
     
     var sampleTransactions: [Transaction] {
-        [
-            Transaction(amount: 45.50, category: .groceries, date: Date(), note: "Supermarket", isExpense: true),
-            Transaction(amount: 35.00, category: .dining, date: Date(), note: "Lunch with team", isExpense: true),
-            Transaction(amount: 1200.00, category: .salary, date: Date(), note: "Monthly salary", isExpense: false),
-            Transaction(amount: 60.00, category: .transport, date: Date(), note: "Fuel", isExpense: true),
-            Transaction(amount: 25.99, category: .entertainment, date: Date(), note: "Netflix subscription", isExpense: true)
-        ]
+        transactions.map { entity in
+            Transaction(
+                amount: entity.amount,
+                category: Transaction.Category(rawValue: entity.category ?? "") ?? .groceries,
+                date: entity.date ?? Date(),
+                note: entity.note,
+                isExpense: entity.isExpense
+            )
+        }
     }
 }

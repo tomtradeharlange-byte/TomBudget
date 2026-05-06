@@ -1,6 +1,8 @@
 import SwiftUI
+import CoreData
 
 struct AddTransactionView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @State private var amount = ""
     @State private var selectedCategory: Transaction.Category = .groceries
     @State private var date = Date()
@@ -86,7 +88,7 @@ struct AddTransactionView: View {
                 }
                 
                 // Save Button
-                Button(action: {}) {
+                Button(action: saveTransaction) {
                     Text("Save Transaction")
                         .font(.headlineMD)
                         .foregroundColor(.white)
@@ -102,6 +104,26 @@ struct AddTransactionView: View {
         }
         .background(Color.tombudgetBackground.ignoresSafeArea())
         .navigationBarHidden(true)
+    }
+    
+    private func saveTransaction() {
+        guard let amountValue = Double(amount) else { return }
+        
+        let entity = TransactionEntity(context: viewContext)
+        entity.id = UUID()
+        entity.amount = amountValue
+        entity.category = selectedCategory.rawValue
+        entity.date = date
+        entity.note = note.isEmpty ? nil : note
+        entity.isExpense = isExpense
+        
+        do {
+            try viewContext.save()
+            amount = ""
+            note = ""
+        } catch {
+            print("Save error: \(error)")
+        }
     }
 }
 
